@@ -31,5 +31,3 @@ if [ "$key" = "please" ]
         echo "YOU DIDN'T SAY THE MAGIC WORD!"
       done
   fi
-
-  #this can be linked to python script if i can get that working
